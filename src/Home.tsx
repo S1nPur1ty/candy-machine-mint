@@ -19,13 +19,21 @@ import {
   shortenAddress,
 } from "./candy-machine";
 
+import logo from './assets/images/logo.svg';
+
 const ConnectButton = styled(WalletDialogButton)``;
 
 const CounterText = styled.span``; // add your styles here
 
 const MintContainer = styled.div``; // add your styles here
 
-const MintButton = styled(Button)``; // add your styles here
+const MintButton = styled(Button)({
+  fontWeight: "bold",
+  backgroundColor: '#009FE3',
+  borderRadius: 25,
+  minWidth: 200,
+  justifyContent: 'center',
+}); // add your styles here
 
 export interface HomeProps {
   candyMachineId: anchor.web3.PublicKey;
@@ -167,6 +175,10 @@ const Home = (props: HomeProps) => {
 
   return (
     <main>
+      <a href="https://royalbears.art/">
+      <img className="logo" src={logo} alt="logo" />
+      </a>
+
       {wallet && (
         <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
       )}
@@ -179,8 +191,16 @@ const Home = (props: HomeProps) => {
 
       {wallet && <p>Remaining: {itemsRemaining}</p>}
 
+      {!wallet && 
+        <div className="with-m-width">
+        <p className="primary-text">An NFT army of ferocious polar bears coming to Solana</p>
+        <p className="secondary-text">After your transaction is completed your NFT will be visible in your PHANTOM or SOLLET wallet.</p>
+        </div>
+      }
+
       <MintContainer>
         {!wallet ? (
+          
           <ConnectButton>Connect Wallet</ConnectButton>
         ) : (
           <MintButton

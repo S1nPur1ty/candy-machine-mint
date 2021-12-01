@@ -1,0 +1,14 @@
+#root {
+    background-color: #070708 !important;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: url('./images/top.svg') top center no-repeat, url('./images/bottom.svg') bottom center no-repeat;
+    background-size: 100%;
+}

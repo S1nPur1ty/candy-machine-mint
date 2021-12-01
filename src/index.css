@@ -13,3 +13,69 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.logo {
+  filter: invert(1);
+  width: 100px;
+}
+
+#root {
+  background-color: #070708 !important;
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background: url('./assets/images/top.svg') top center no-repeat, url('./assets/images/bottom.svg') bottom center no-repeat;
+  background-size: 100%;
+}
+
+.MuiButton-containedPrimary {
+  background-color: #009FE3 !important;
+  font-weight: bold !important;
+  border-radius: 25px !important;
+  min-width: 200px !important;
+  text-transform: uppercase !important;
+}
+
+.MuiButton-label {
+  justify-content: center !important;
+}
+
+.with-m-width {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  box-sizing: border-box
+}
+
+p.primary-text {
+  font-size: 42px;
+  font-weight: 900;
+}
+
+p.secondary-text {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .logo {
+    width: 60px;
+  }
+
+  p.primary-text {
+    font-size: 16px;
+    font-weight: 900;
+  }
+  
+  p.secondary-text {
+    font-size: 14px;
+    font-weight: 300;
+  }  
+}
